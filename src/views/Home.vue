@@ -12,12 +12,30 @@
           <ion-title size="large">Blank</ion-title>
         </ion-toolbar>
       </ion-header>
+
+      <ion-list>
+        <ion-item>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>
+            <h1>Create Idea</h1>
+            <ion-note>Run Idea By Brandy</ion-note>
+          </ion-label>
+          <ion-badge color="success" slot="end">
+            5 Days
+          </ion-badge>
+        </ion-item>
+      </ion-list>
     
       <div id="container">
         <strong>Ready to create an app?</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-        <ion-button>ボタン</ion-button>
       </div>
+
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button @click="() => router.push('/new')">
+          <ion-icon :icon="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
     </ion-content>
   </ion-page>
 </template>
@@ -25,6 +43,8 @@
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import { add } from 'ionicons/icons';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'Home',
@@ -34,6 +54,12 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
+  },
+  setup() {
+    return {
+      router: useRouter(),
+      add
+    }
   }
 });
 </script>

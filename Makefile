@@ -5,10 +5,10 @@ build:
 	ionic build
 
 unit:
-	ionic test:unit
+	npm run test:unit
 
 e2e:
-	ionic test:e2e
+	npm run test:e2e
 
 lint:
-	ionic lint
+	npm lint
